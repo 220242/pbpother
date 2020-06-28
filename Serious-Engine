@@ -1,0 +1,22 @@
+git clone https://github.com/ptitSeb/Serious-Engine
+cd Serious-Engine/Sources
+nano build-linux64.sh
+#Comment 3 and 4 lines and add NCPU=5, like this
+
+#NCPU=`cat /proc/cpuinfo |grep vendor_id |wc -l`
+#let NCPU=$NCPU+2
+NCPU=5
+
+Also comment line 17 and add other cmake Release build, like this 
+
+#cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo .. $1
+cmake -DCMAKE_BUILD_TYPE=Release .. $1
+
+build engine with ./build-linux64.sh
+cp cmake-build/ssam ../Bin
+cp cmake-build/Debug/* ../Bin
+
+Now copy all game data files to Serious-Engine 
+I am using data from steam version game https://store.steampowered.com/app/41060/
+
+Launch with ./Bin/ssam
