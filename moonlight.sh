@@ -19,6 +19,5 @@ mkdir build
 cd build/
 cmake ../
 make
-sudo make install
 echo "now pair with desktop (./moonlight pair 192.168.42.2)"
 echo "and stream (./moonlight stream)"
